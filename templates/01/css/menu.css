@@ -1,0 +1,40 @@
+.navbar-inverse .navbar-brand {
+	color: #DBDBDB;
+}
+
+.navbar-inverse{
+	background-color: #F98613;
+	border-color: #FC6900;
+	opacity: 0.9;
+}
+
+.navbar-inverse .navbar-nav > .active > a{
+	background-color: #ca6a03;
+
+}
+
+.navbar .container .collapse ul a:hover{
+	background-color: #ca6a03;
+	border-left: none;
+}
+
+.navbar .container .collapse a{
+	border-left: 1px solid #E1E1E1;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	min-width: 80px;
+}
+
+.navbar .container .collapse ul li:last-child a{
+	border-right: 1px solid #E1E1E1;
+}
+
+.navbar .container .collapse .dropdown-menu{
+	background-color: #F98613;
+}
+
+.navbar .container .collapse .dropdown ul li a{
+	border: none;
+	line-height: 28px;
+}
