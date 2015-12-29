@@ -1,0 +1,57 @@
+main.js
+	-> Khởi tạo các thông số
+	-> load file json chứa bản đồ
+	-> tạo scroller sau khi load xong
+		scroller.js
+		-> tạo lớp far (hình nền di chuyển với kiểu TilingSprite)
+		-> tạo lớp mid (hình nền di chuyển với kiểu TilingSprite)
+		-> tạo lớp front(Walls)
+			walls.js
+			-> tạo pool (WallSpritesPool obj khởi tạo trước một số lượng tố đa các trường hợp obj có thể hiển thị rồi tái sử dụng trong game)
+				wallSpritesPool.js
+				-> tạo mảng windows,decorations,frontEdges,backEdges,steps
+				this.addWindowSprites(6, "window_01");
+				(add với số lượng tối đa có thể xuất hiện) sau đó xáo trộn từng mảng (cho các phần tử liền kề ít lặp lại)
+			-> tạo borrowWallSpriteLookup[] (this.pool.borrowFrontEdge) chứa những function lấy wall với id
+				wallSpritesPool.js
+				-> lấy ra phần tử đầu tiên của mảng
+			-> tạo returnWallSpriteLooku[] (this.pool.returnFrontEdge) chứa những function trả wall với id
+				wallSpritesPool.js
+				-> thêm vào cuối mảng
+			-> tạo mảng slices
+		-> tạo mapBuilder truyền vào front(Walls)
+			mapBuilder.js
+			->createMap()
+				-> createWallSpan(chiều cao, độ dài)
+				-> thêm đầu 
+					walls.js
+					-> tạo slice với kiểu WallSlice(một kiểu dạng model của wall)
+					-> thêm vào cuối mảng slices
+				-> thêm giữa (duyệt dội dài thêm vào)
+				-> thêm cuối
+	-> chạy hàm update
+		scroller.js
+		->moveViewportXBy() viewportX tăng dần thêm 5 sau mỗi lần chạy
+		->far.setViewportX(viewportX)
+			far.js
+			-> setViewportX()
+			-> tilePosition.x  -= MIN_SCROLL_SPEED(5) * tốc độ của far
+		->mid.setViewportX(viewportX)
+		->front.setViewportX(viewportX)
+			Walls.js
+			->viewportX =[0-VIEWPORT_WIDTH(dộ rộng khung nhìn)]
+			-> tạo biến prevViewportSliceX = this.viewportSliceX;
+			-> viewportSliceX = viewportX/WallSlice.WIDTH (tính ra đang view ở ô thứ bao nhiêu)
+			-> removeOldSlices(prevViewportSliceX)
+				-> numOldSlices = this.viewportSliceX - prevViewportSliceX; (số lượng Wall đã add trước đó)
+				-> (kiểm tra mếu numOldSlices lớn hơn số Wall có thể hiển thị thì set lại numOldSlices = max Wall có thể hiển thị)
+				-> slices từ prevViewportSliceX đến prevViewportSliceX + numOldSlices
+					-> returnWallSprite(this.slices[i].type,this.slices[i].sprite)
+					-> removeChild(this.slices[i].sprite);
+			-> addNewSlices();
+				-> firstX = -(this.viewportX % WallSlice.WIDTH); 	//đoạn dư ra trong lúc di chuyển
+				-> duyệt từ viewportSliceX đến viewportSliceX + VIEWPORT_NUM_SLICES
+					-> slice = this.slices[i]
+					-> slice.sprite = this.borrowWallSprite(slice.type)
+					-> slice.sprite.position.x = firstX + (sliceIndex * WallSlice.WIDTH); (//đoạn dư ra trong lúc di chuyển + độ rộng Wall* vị trí Wall )
+					->slice.sprite.position.y = slice.y;
