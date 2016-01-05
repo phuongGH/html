@@ -3,6 +3,12 @@
  */
 LayerMap = function(){
     PIXI.Container.call(this);
+    this.init = init;
+
+    var asset = new MapAsset(this.init);
+    function init(){
+
+    }
 }
 
 LayerMap.prototype = Object.create(PIXI.Container.prototype);

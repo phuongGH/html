@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d1ab7e6d9e80e3ba8aa82be0257206eb:1402dc444cd4bbe5ee3900b16d46d362:d256bdbbc450ff6ac26b5ff18c91a0e4$ -->
+<TextureAtlas imagePath="AtlasObjectMap1.png">
+    <SubTexture name="Bang1" x="1030" y="1097" width="476" height="512"/>
+    <SubTexture name="Bang2" x="1454" y="256" width="512" height="394"/>
+    <SubTexture name="Bang3" x="1504" y="652" width="512" height="443"/>
+    <SubTexture name="Bang4" x="2" y="1097" width="512" height="461"/>
+    <SubTexture name="Bang5" x="1508" y="1097" width="356" height="512"/>
+    <SubTexture name="DaBien1" x="500" y="652" width="512" height="399"/>
+    <SubTexture name="DaBien2" x="1064" y="256" width="388" height="377"/>
+    <SubTexture name="DaBien3" x="516" y="1097" width="512" height="494"/>
+    <SubTexture name="DaBien4" x="1325" y="2" width="263" height="229"/>
+    <SubTexture name="DaBien5" x="1061" y="2" width="262" height="226"/>
+    <SubTexture name="HoaBien1" x="2" y="2" width="106" height="91"/>
+    <SubTexture name="HoaBien10" x="804" y="2" width="255" height="225"/>
+    <SubTexture name="HoaBien11" x="2" y="256" width="336" height="264"/>
+    <SubTexture name="HoaBien12" x="757" y="256" width="305" height="336"/>
+    <SubTexture name="HoaBien2" x="564" y="2" width="238" height="204"/>
+    <SubTexture name="HoaBien3" x="390" y="2" width="172" height="148"/>
+    <SubTexture name="HoaBien4" x="1014" y="652" width="488" height="405"/>
+    <SubTexture name="HoaBien5" x="2" y="652" width="496" height="396"/>
+    <SubTexture name="HoaBien6" x="340" y="256" width="415" height="322"/>
+    <SubTexture name="HoaBien7" x="110" y="2" width="138" height="121"/>
+    <SubTexture name="HoaBien8" x="250" y="2" width="138" height="121"/>
+    <SubTexture name="HoaBien9" x="1590" y="2" width="286" height="252"/>
+</TextureAtlas>

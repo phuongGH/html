@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6818ad86fb84b5ce277f1fec37b2dfb1:79c71ddea79a33aa40adda65602aa3b5:8abd3e29b6d583d165a2ed36c1ac770f$ -->
+<TextureAtlas imagePath="AtlasObjectMap3.png">
+    <SubTexture name="Candy" x="664" y="356" width="333" height="399"/>
+    <SubTexture name="CayThong1" x="2" y="757" width="405" height="512"/>
+    <SubTexture name="CayThong2" x="996" y="1271" width="482" height="512"/>
+    <SubTexture name="Hole" x="1513" y="356" width="512" height="356"/>
+    <SubTexture name="QuayTay" x="1480" y="1271" width="512" height="511"/>
+    <SubTexture name="RongBien" x="1638" y="2" width="326" height="352"/>
+    <SubTexture name="RongBien1" x="2" y="356" width="316" height="376"/>
+    <SubTexture name="SanHo" x="1437" y="757" width="512" height="439"/>
+    <SubTexture name="SanHo1" x="2" y="1271" width="512" height="475"/>
+    <SubTexture name="SanHo2" x="516" y="1271" width="478" height="512"/>
+    <SubTexture name="SanHo3" x="409" y="757" width="512" height="411"/>
+    <SubTexture name="SanHoChum" x="1124" y="2" width="512" height="219"/>
+    <SubTexture name="SaoBien" x="798" y="2" width="324" height="310"/>
+    <SubTexture name="SaoBien1" x="498" y="2" width="298" height="262"/>
+    <SubTexture name="ThuyTuc" x="923" y="757" width="512" height="435"/>
+    <SubTexture name="ThuyTuc1" x="999" y="356" width="512" height="346"/>
+    <SubTexture name="ThuyTuc2" x="320" y="356" width="342" height="356"/>
+    <SubTexture name="VoOc1" x="133" y="2" width="130" height="161"/>
+    <SubTexture name="VoOc2" x="2" y="2" width="129" height="160"/>
+    <SubTexture name="VoOc3" x="265" y="2" width="231" height="196"/>
+</TextureAtlas>

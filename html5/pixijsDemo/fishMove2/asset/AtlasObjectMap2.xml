@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:89cc479907f25b169d05299a8be290a4:b0fdfcbbe996bddd3bf292dd445001d5:d8306bd20aa027fdda5fdad0cefeb850$ -->
+<TextureAtlas imagePath="AtlasObjectMap2.png">
+    <SubTexture name="MangBam1" x="516" y="2" width="512" height="290"/>
+    <SubTexture name="MangBam2" x="516" y="312" width="512" height="413"/>
+    <SubTexture name="PhoiCanh1" x="368" y="1261" width="386" height="512"/>
+    <SubTexture name="PhoiCanh10" x="1030" y="312" width="512" height="433"/>
+    <SubTexture name="PhoiCanh11" x="1253" y="1261" width="504" height="512"/>
+    <SubTexture name="PhoiCanh12" x="2" y="312" width="512" height="388"/>
+    <SubTexture name="PhoiCanh2" x="1030" y="2" width="512" height="308"/>
+    <SubTexture name="PhoiCanh3" x="756" y="1261" width="495" height="512"/>
+    <SubTexture name="PhoiCanh4" x="2" y="2" width="512" height="274"/>
+    <SubTexture name="PhoiCanh5" x="516" y="747" width="512" height="488"/>
+    <SubTexture name="PhoiCanh6" x="2" y="1261" width="364" height="512"/>
+    <SubTexture name="PhoiCanh7" x="1030" y="747" width="500" height="512"/>
+    <SubTexture name="PhoiCanh8" x="1532" y="747" width="470" height="512"/>
+    <SubTexture name="PhoiCanh9" x="2" y="747" width="512" height="434"/>
+</TextureAtlas>
