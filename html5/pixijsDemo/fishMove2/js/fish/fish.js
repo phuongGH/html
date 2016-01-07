@@ -5,7 +5,7 @@ Fish = function(fishName, showCircle){
 
     PIXI.Container.call(this);
 
-    var fish = GameAsset.getFish(fishName);
+    var fish = FishAsset.getFish(fishName);
     var fishFrame = new PIXI.extras.MovieClip(fish.getFrame());
     var speed = 3;
     var radius = 0;
@@ -58,6 +58,7 @@ Fish = function(fishName, showCircle){
     function distance(x1,y1,x2,y2){
         return Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
     }
+
 
 }
 

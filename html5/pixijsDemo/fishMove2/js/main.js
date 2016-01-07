@@ -10,7 +10,8 @@
 
             var renderer = PIXI.autoDetectRenderer(AppInfo.WIDTH ,AppInfo.HEIGHT,{transparent:true});
             var mainStage = new PIXI.Container();
-
+            var fishAsset;
+            var layerMap,layerMyfish;
             amount = (renderer instanceof PIXI.WebGLRenderer) ? 100 : 5;
 
             if(amount == 5)
@@ -22,18 +23,32 @@
             $("body").append(renderer.view);
             //document.body.appendChild(renderer.view);
 
+            fishAsset = new FishAsset(loadResourcesComplete);
 
-            var  layerMap= new  LayerMap();
-            mainStage.addChild(layerMap);
+            function loadResourcesComplete()
+            {
+                layerMap = new  LayerMap();
+                layerMap.scale.x = 0.1;
+                layerMap.scale.y = 0.1;
 
-            var  layerMyfish = new  LayerMyFish();
-            mainStage.addChild(layerMyfish);
+                layerMyfish = new  LayerMyFish();
 
-            update();
+                mainStage.addChild(layerMap);
+                mainStage.addChild(layerMyfish);
+
+                update();
+
+            }
+
+
 
             function update(){
                 requestAnimationFrame(update);
                 renderer.render(mainStage);
+
+                layerMyfish.update();
+                //layerMap.position.x -= 10;
+                //layerMap.position.y -= 10;
             }
         }
     };

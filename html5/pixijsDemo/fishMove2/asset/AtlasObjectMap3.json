@@ -1,0 +1,192 @@
+{"frames": {
+
+"Candy.png":
+{
+	"frame": {"x":664,"y":356,"w":333,"h":399},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":333,"h":399},
+	"sourceSize": {"w":333,"h":399},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"CayThong1.png":
+{
+	"frame": {"x":2,"y":757,"w":405,"h":512},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":405,"h":512},
+	"sourceSize": {"w":405,"h":512},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"CayThong2.png":
+{
+	"frame": {"x":996,"y":1271,"w":482,"h":512},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":482,"h":512},
+	"sourceSize": {"w":482,"h":512},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"Hole.png":
+{
+	"frame": {"x":1513,"y":356,"w":512,"h":356},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":356},
+	"sourceSize": {"w":512,"h":356},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"QuayTay.png":
+{
+	"frame": {"x":1480,"y":1271,"w":512,"h":511},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":511},
+	"sourceSize": {"w":512,"h":511},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"RongBien.png":
+{
+	"frame": {"x":1638,"y":2,"w":326,"h":352},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":326,"h":352},
+	"sourceSize": {"w":326,"h":352},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"RongBien1.png":
+{
+	"frame": {"x":2,"y":356,"w":316,"h":376},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":316,"h":376},
+	"sourceSize": {"w":316,"h":376},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"SanHo.png":
+{
+	"frame": {"x":1437,"y":757,"w":512,"h":439},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":439},
+	"sourceSize": {"w":512,"h":439},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"SanHo1.png":
+{
+	"frame": {"x":2,"y":1271,"w":512,"h":475},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":475},
+	"sourceSize": {"w":512,"h":475},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"SanHo2.png":
+{
+	"frame": {"x":516,"y":1271,"w":478,"h":512},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":478,"h":512},
+	"sourceSize": {"w":478,"h":512},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"SanHo3.png":
+{
+	"frame": {"x":409,"y":757,"w":512,"h":411},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":411},
+	"sourceSize": {"w":512,"h":411},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"SanHoChum.png":
+{
+	"frame": {"x":1124,"y":2,"w":512,"h":219},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":219},
+	"sourceSize": {"w":512,"h":219},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"SaoBien.png":
+{
+	"frame": {"x":798,"y":2,"w":324,"h":310},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":324,"h":310},
+	"sourceSize": {"w":324,"h":310},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"SaoBien1.png":
+{
+	"frame": {"x":498,"y":2,"w":298,"h":262},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":298,"h":262},
+	"sourceSize": {"w":298,"h":262},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"ThuyTuc.png":
+{
+	"frame": {"x":923,"y":757,"w":512,"h":435},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":435},
+	"sourceSize": {"w":512,"h":435},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"ThuyTuc1.png":
+{
+	"frame": {"x":999,"y":356,"w":512,"h":346},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":346},
+	"sourceSize": {"w":512,"h":346},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"ThuyTuc2.png":
+{
+	"frame": {"x":320,"y":356,"w":342,"h":356},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":342,"h":356},
+	"sourceSize": {"w":342,"h":356},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"VoOc1.png":
+{
+	"frame": {"x":133,"y":2,"w":130,"h":161},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":161},
+	"sourceSize": {"w":130,"h":161},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"VoOc2.png":
+{
+	"frame": {"x":2,"y":2,"w":129,"h":160},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":129,"h":160},
+	"sourceSize": {"w":129,"h":160},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"VoOc3.png":
+{
+	"frame": {"x":265,"y":2,"w":231,"h":196},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":231,"h":196},
+	"sourceSize": {"w":231,"h":196},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "AtlasObjectMap3.png",
+	"format": "RGBA8888",
+	"size": {"w":2027,"h":1785},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e2dc1c83c5a141d7dce49011a72a740e:79c71ddea79a33aa40adda65602aa3b5:77632f67f7c77ef83197bc9f08963354$"
+}
+}
