@@ -7,8 +7,9 @@ Fish = function(fishName, showCircle){
 
     var fish = FishAsset.getFish(fishName);
     var fishFrame = new PIXI.extras.MovieClip(fish.getFrame());
-    var speed = 3;
+    var speed = 10;
     var radius = 0;
+    var curPosition = {};
 
     this.direction = Math.random() * Math.PI * 2;
     this.turningSpeed = Math.random() - 0.8;
@@ -19,10 +20,15 @@ Fish = function(fishName, showCircle){
     this.getSpeed = getSpeed;
     this.checkCollision = checkCollision;
     this.getRadius = getRadius;
+    this.getCurPosition = getCurPosition;
+    this.setCurPosition = setCurPosition;
 
     fishFrame.anchor.set(0.5);
     fishFrame.animationSpeed = 0.2;
     fishFrame.play();
+
+    curPosition.x =  - Math.random()*2000;
+    curPosition.y = - Math.random()*2000;
 
     if(showCircle)
     {
@@ -59,6 +65,16 @@ Fish = function(fishName, showCircle){
         return Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
     }
 
+    function getCurPosition()
+    {
+        return curPosition;
+    }
+
+    function setCurPosition(point)
+    {
+        curPosition.x += point.x;
+        curPosition.y += point.y;
+    }
 
 }
 

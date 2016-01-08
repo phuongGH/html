@@ -4,10 +4,18 @@
 LayerMap = function(){
     PIXI.Container.call(this);
     this.init = init;
+    this.onMouseMove = onMouseMove;
+    this.update = update;
 
     var asset = new MapAsset(this);
     var tilesMap = [];
     var tile;
+    var background = new PIXI.Graphics()
+    background.beginFill(0x3fd9ff,1);
+    background.drawRect(0,0,12000,14000);
+    background.endFill();
+
+    this.addChild(background);
 
     function init(){
         tilesMap = asset.getTilesMap();
@@ -21,6 +29,18 @@ LayerMap = function(){
             this.addChild(tile);
         }
 
+    }
+
+    function onMouseMove(eventData)
+    {
+
+    }
+
+    function update(MyFishPosition)
+    {
+        this.position.x =  MyFishPosition.x;
+        this.position.y = MyFishPosition.y;
+        //console.log(MyFishPosition.x + " " + MyFishPosition.y)
     }
 }
 

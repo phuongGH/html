@@ -28,17 +28,23 @@
             function loadResourcesComplete()
             {
                 layerMap = new  LayerMap();
-                layerMap.scale.x = 0.1;
-                layerMap.scale.y = 0.1;
+                //layerMap.scale.x = 0.1;
+                //layerMap.scale.y = 0.1;
 
                 layerMyfish = new  LayerMyFish();
 
                 mainStage.addChild(layerMap);
                 mainStage.addChild(layerMyfish);
 
+                document.addEventListener("mousemove",function(event){
+                    layerMyfish.onMouseMove(event);
+                    layerMap.onMouseMove(event);
+                });
+
                 update();
 
             }
+
 
 
 
@@ -47,6 +53,7 @@
                 renderer.render(mainStage);
 
                 layerMyfish.update();
+                layerMap.update(layerMyfish.getMyFishPosition());
                 //layerMap.position.x -= 10;
                 //layerMap.position.y -= 10;
             }
