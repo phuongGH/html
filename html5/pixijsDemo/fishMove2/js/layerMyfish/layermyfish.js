@@ -8,28 +8,15 @@ LayerMyFish = function(){
     this.update = update;
     this.onMouseMove = onMouseMove;
     this.getMyFishPosition = getMyFishPosition;
+    this.getMyFish = getMyFish;
 
-    /*PIXI.loader.add('asset/socden1.json').load(onAssetsLoaded);
-
-    var Frames = [];
-
-    var fish;
-
-    function onAssetsLoaded()
-    {
-        for (var i = 1; i < 10; i++) {
-
-            Frames.push(PIXI.Texture.fromFrame("Blue_butter00" + i + '.png'));
-        }
-        console.log(parent);
-
-    }*/
-
-    var fish = new Fish("socden1","Blue_butter00",10, true);
+    //var fish = new Fish("socden1","Blue_butter00",10, true);
+    var fish = new Fish("socden1",true);
     fish.position.x = AppInfo.WIDTH/2;
     fish.position.y = AppInfo.HEIGHT/2;
-    //myFishPosition.x = Math.random()*2000;
-    //myFishPosition.y = Math.random()*2000;
+    fish.setCurPosition({x:-Math.random()*2000,y:-Math.random()*2000});
+    fish.size = AppInfo.MyFishDefaultSize;
+    fish.scale.x = fish.scale.y = fish.size * AppInfo.ratio;
     this.addChild(fish);
     var detalX;
     var detalY;
@@ -39,6 +26,8 @@ LayerMyFish = function(){
 
     function onMouseMove(eventData)
     {
+        fish.moveToX = eventData.clientX;
+        fish.moveToY = eventData.clientY;
         fish.rotation = -( Math.atan2(fish.x - eventData.clientX, fish.y - eventData.clientY) - (Math.PI/2));
     }
 
@@ -51,66 +40,35 @@ LayerMyFish = function(){
     {
         if(fish)
         {
-            //if(Math.abs(fish.position.x - fish.moveToX)>2 && Math.abs(fish.position.y - fish.moveToY)>2)
-            //{
-            detalX = Math.cos(fish.rotation) * fish.getSpeed();
-            detalY = Math.sin(fish.rotation) * fish.getSpeed();
-            pCurrX = fish.getCurPosition().x - AppInfo.WIDTH/2 + fish.width/4+4;
-            pCurrY = fish.getCurPosition().y - AppInfo.HEIGHT/2 + fish.height/4+4;
-            if(pCurrX > 0 && detalX>0)
-            {
-                detalX = 0;
+            if(Math.abs(fish.position.x - fish.moveToX)>2 && Math.abs(fish.position.y - fish.moveToY)>2) {
+                detalX = Math.cos(fish.rotation) * fish.getSpeed();
+                detalY = Math.sin(fish.rotation) * fish.getSpeed();
+                pCurrX = fish.getCurPosition().x - AppInfo.WIDTH / 2 + fish.width / 4 + 4;
+                pCurrY = fish.getCurPosition().y - AppInfo.HEIGHT / 2 + fish.height / 2 + 4;
+                if (pCurrX > 0 && detalX > 0) {
+                    detalX = 0;
+                }
+
+                if (pCurrX < -12000 + fish.width / 2 + 4 && detalX < 0) {
+                    detalX = 0;
+                }
+
+                if (pCurrY > 0 && detalY > 0) {
+                    detalY = 0;
+                }
+
+                if (pCurrY < -14000 + fish.height && detalY < 0) {
+                    detalY = 0;
+                }
+
+                fish.setCurPosition({x: detalX, y: detalY});
             }
-
-            if(pCurrX < -12000+fish.width/2+4 && detalX<0)
-            {
-                detalX = 0;
-            }
-
-           /* if(fish.getCurPosition().x < 0 )
-            {
-                pTempX = 0;
-            }
-
-            if( fish.getCurPosition().y > 12000)
-            {
-                pTempX = 0;
-            }*/
-
-
-            //if(pTempY > 0 )
-            //{
-            //    pTempY = 0;
-            //}
-            //
-            //if(pTempY < -14000)
-            //{
-            //    pTempY = -14000;
-            //}
-
-
-            fish.setCurPosition( {x:detalX,y:detalY});
-            //}
         }
-       /* if(!fish)
-        {
-            if(Frames.length > 0)
-            {
-                fish = new PIXI.extras.MovieClip(Frames);
-                fish.anchor.set(0.5);
-                fish.animationSpeed = 0.2;
-                fish.play();
 
-                var circle = new PIXI.Graphics()
-                circle.lineStyle(2, 0x0000FF, 1);
-                circle.beginFill(0xFF700B,1);
-                circle.drawCircle(0,0,fish.width/4);
-                circle.endFill();
+    }
 
-                this.addChild(circle);
-                this.addChild(fish);
-            }
-        }*/
+    function getMyFish(){
+        return fish;
     }
 
 

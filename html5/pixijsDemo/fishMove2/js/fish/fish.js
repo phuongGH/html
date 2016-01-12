@@ -15,9 +15,10 @@ Fish = function(fishName, showCircle){
     this.turningSpeed = Math.random() - 0.8;
     this.moveToX = 0;
     this.moveToY = 0;
-
+    this.size = 10;
 
     this.getSpeed = getSpeed;
+    this.setSpeed = setSpeed;
     this.checkCollision = checkCollision;
     this.getRadius = getRadius;
     this.getCurPosition = getCurPosition;
@@ -33,8 +34,8 @@ Fish = function(fishName, showCircle){
     if(showCircle)
     {
         var circle = new PIXI.Graphics()
-        circle.lineStyle(2, 0x0000FF, 1);
-        circle.beginFill(0xFF700B,1);
+        circle.lineStyle(2, 0x0000FF,.5);
+        circle.beginFill(0xFF700B,.8);
         circle.drawCircle(0,0,fishFrame.width/4);
         circle.endFill();
         this.addChild(circle);
@@ -47,9 +48,14 @@ Fish = function(fishName, showCircle){
         return speed;
     }
 
+    function setSpeed(val)
+    {
+        speed = val;
+    }
+
     function checkCollision(anotherFish)
     {
-        if(distance(this.x,this.y,anotherFish.x,anotherFish.y)<(this.getRadius()-anotherFish.getRadius()))
+        if(distance(this.curPosition.x,this.curPosition.y,anotherFish.curPosition.x,anotherFish.curPosition.y)<(this.getRadius()-anotherFish.getRadius()))
         {
             return true;
         }
