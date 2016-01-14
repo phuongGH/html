@@ -1,0 +1,100 @@
+{"frames": {
+
+"Gold_fish1.png":
+{
+	"frame": {"x":2,"y":2,"w":870,"h":490},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":870,"h":490},
+	"sourceSize": {"w":870,"h":490}
+},
+"Gold_fish10.png":
+{
+	"frame": {"x":874,"y":2,"w":870,"h":490},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":870,"h":490},
+	"sourceSize": {"w":870,"h":490}
+},
+"Gold_fish11.png":
+{
+	"frame": {"x":2,"y":494,"w":870,"h":490},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":870,"h":490},
+	"sourceSize": {"w":870,"h":490}
+},
+"Gold_fish2.png":
+{
+	"frame": {"x":874,"y":494,"w":870,"h":490},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":870,"h":490},
+	"sourceSize": {"w":870,"h":490}
+},
+"Gold_fish3.png":
+{
+	"frame": {"x":2,"y":986,"w":870,"h":490},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":870,"h":490},
+	"sourceSize": {"w":870,"h":490}
+},
+"Gold_fish4.png":
+{
+	"frame": {"x":874,"y":986,"w":870,"h":490},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":870,"h":490},
+	"sourceSize": {"w":870,"h":490}
+},
+"Gold_fish5.png":
+{
+	"frame": {"x":2,"y":1478,"w":870,"h":490},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":870,"h":490},
+	"sourceSize": {"w":870,"h":490}
+},
+"Gold_fish6.png":
+{
+	"frame": {"x":874,"y":1478,"w":870,"h":490},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":870,"h":490},
+	"sourceSize": {"w":870,"h":490}
+},
+"Gold_fish7.png":
+{
+	"frame": {"x":2,"y":1970,"w":870,"h":490},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":870,"h":490},
+	"sourceSize": {"w":870,"h":490}
+},
+"Gold_fish8.png":
+{
+	"frame": {"x":874,"y":1970,"w":870,"h":490},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":870,"h":490},
+	"sourceSize": {"w":870,"h":490}
+},
+"Gold_fish9.png":
+{
+	"frame": {"x":2,"y":2462,"w":870,"h":490},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":870,"h":490},
+	"sourceSize": {"w":870,"h":490}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "GoldFish.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":4096},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:d67d7f7c66c86ad12c8266937bb2af21$"
+}
+}

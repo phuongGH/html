@@ -76,11 +76,11 @@
                     for(i;i>=0;i--)
                     {
                         food = listFoods[i];
-                        if(myFish.checkCollision(food))
+                       /* if(myFish.checkCollision(food))
                         {
                             console.log("collision");
                             //layerFish.removeChild(food);
-                        }
+                        }*/
                     }
                 }
 
