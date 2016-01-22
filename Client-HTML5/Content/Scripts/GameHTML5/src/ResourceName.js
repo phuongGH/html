@@ -8,15 +8,9 @@ define(function(require) {
     }
 
     ResourceName.ATLAS_BUTTON = "AtlasButton";
-    ResourceName.FONT_APOLOGY = "Apology";
-    ResourceName.BTN_CLOSE_DOWN = "BTN_CloseDown.png";
-    ResourceName.BTN_CLOSE_OVER = "BTN_CloseOver.png";
-    ResourceName.BTN_CLOSE_UP = "BTN_CloseUp.png";
-    ResourceName.BTN_DEFAULT_GREEN_DOWN = "BTN_DefaultGreenDown.png";
-    ResourceName.BTN_DEFAULT_GREEN_OVER = "BTN_DefaultGreenOver.png";
-    ResourceName.BTN_DEFAULT_GREEN_UP = "BTN_DefaultGreenUp.png";
-
-    //ResourceName.
+    ResourceName.BTN_CLOSE = "BTN_Close";
+    ResourceName.BTN_DEFAULT_GREEN = "BTN_DefaultGreen";
+    ResourceName.BTN_CHECK = "BtnCheck";
 
     return ResourceName;
 });

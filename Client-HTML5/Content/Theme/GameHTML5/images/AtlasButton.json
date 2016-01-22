@@ -53,14 +53,41 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":169,"h":48},
 	"sourceSize": {"w":169,"h":48},
 	"pivot": {"x":0.5,"y":0.5}
+},
+"BtnCheckDown.png":
+{
+	"frame": {"x":563,"y":2,"w":122,"h":122},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":122,"h":122},
+	"sourceSize": {"w":122,"h":122},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"BtnCheckOver.png":
+{
+	"frame": {"x":687,"y":2,"w":122,"h":122},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":122,"h":122},
+	"sourceSize": {"w":122,"h":122},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"BtnCheckUp.png":
+{
+	"frame": {"x":811,"y":2,"w":122,"h":122},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":122,"h":122},
+	"sourceSize": {"w":122,"h":122},
+	"pivot": {"x":0.5,"y":0.5}
 }},
 "meta": {
 	"app": "http://www.codeandweb.com/texturepacker",
 	"version": "1.0",
 	"image": "AtlasButton.png",
 	"format": "RGBA8888",
-	"size": {"w":563,"h":52},
+	"size": {"w":935,"h":126},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:6056015aff9b39b358f960eeec3c7aa6:a9fb5329093f874f6e8ae901a376fe57:204999f23d4b2e88fe1294358199c9ee$"
+	"smartupdate": "$TexturePacker:SmartUpdate:4c9211cf71feaf34746bababef572d51:72969165ed5f92dde35ea6a03dc8c72b:204999f23d4b2e88fe1294358199c9ee$"
 }
 }

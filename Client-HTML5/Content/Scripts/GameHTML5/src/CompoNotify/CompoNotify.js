@@ -7,135 +7,200 @@ define(function (require) {
     var ButtonOption = require('../Components/ButtonOption');
     var Button = require('../Components/Button');
     var ResourceName = require('../ResourceName');
-    var Container = PIXI.Container;
-    var Graphics = PIXI.Graphics;
-    var _textureButton;
-    var _this;
-
+    var txtMarginTop = 30;
+    var btnMarginTop = 10;
+    var btnMarginBotton = 20;
     CompoNotify.MESSAGE = 1;
 
-    function CompoNotify(textureButton) {
+    function CompoNotify() {
 
-        Container.call(this);
+        PIXI.Container.call(this);
 
-        _this = this;
-
-        _textureButton = textureButton;
-
-        init();
-        this.visible = false;
-
+        this._init();
 
     }
 
-    CompoNotify.prototype = Object.create(Container.prototype);
+    CompoNotify.prototype = Object.create(PIXI.Container.prototype);
     CompoNotify.prototype.constructor = CompoNotify;
 
 
     Object.defineProperties(ButtonOption.prototype, {
+        shadowBackground: {
+            value: null,
+            writable: true
+        },
+        shadowGraphics: {
+            value: null,
+            writable: true
+        },
         background: {
             value: null,
             writable: true
-        }
-    });
-
-    Object.defineProperties(ButtonOption.prototype, {
+        },
         btnClose: {
             value: null,
             writable: true
-        }
-    });
-
-    Object.defineProperties(ButtonOption.prototype, {
+        },
         btnAgree: {
             value: null,
             writable: true
-        }
-    });
-
-    Object.defineProperties(ButtonOption.prototype, {
+        },
+        btnNotAgree: {
+            value: null,
+            writable: true
+        },
+        btnText: {
+            value: null,
+            writable: true
+        },
         text: {
             value: null,
+            writable: true
+        },
+        callBackAgree: {
+            value: null,
+            writable: true
+        },
+        callBackNotAgree: {
+            value: null,
+            writable: true
+        },
+        callBackButtonText:{
+            value: null,
+            writable: true
+        },
+        blurFilter:{
+            value:null,
             writable: true
         }
     });
 
 
-    function init() {
+    CompoNotify.prototype._init = function () {
+
+        this.shadowBackground = new PIXI.Sprite();
+        this.shadowBackground.x = -10;
+        this.shadowBackground.y = -10;
+        this.addChild(this.shadowBackground);
+
+        var blurFilter  = new PIXI.filters.BlurFilter();
+        this.shadowBackground.filters = [blurFilter];
+        blurFilter.blur = 20;
+
+        this.shadowGraphics = new PIXI.Graphics();
+
+        this.background = new PIXI.Graphics();
+        this.addChild(this.background);
+
+        this.btnAgree = new Button();
+        this.btnAgree.text = "Đồng ý";
+        this.addChild(this.btnAgree);
+
+        this.btnNotAgree = new Button();
+        this.btnNotAgree.text = "Không đồng ý";
+        this.addChild(this.btnNotAgree);
+
+        this.btnText = new Button();
+        this.addChild(this.btnText);
+
         var btnOption = new ButtonOption();
-        btnOption.type = ButtonOption.BUTTON_IMAGES;
-        btnOption.textureButtonUp = _textureButton[ResourceName.BTN_CLOSE_UP];
-        btnOption.textureButtonOver = _textureButton[ResourceName.BTN_CLOSE_OVER];
-        btnOption.textureButtonDown = _textureButton[ResourceName.BTN_CLOSE_DOWN];
+        btnOption.setButtonTexture(ResourceName.ATLAS_BUTTON,ResourceName.BTN_CLOSE);
+        this.btnClose = new Button(btnOption);
 
-        _this.background = new Graphics();
-        _this.addChild(_this.background);
+        this.addChild(this.btnClose);
 
-        _this.btnClose = new Button(btnOption);
-        _this.addChild(_this.btnClose);
-
-        btnOption.type = ButtonOption.BUTTON_DEFAULT_GREEN;
-        btnOption.text = "Đồng ý"
-        _this.btnAgree = new Button(btnOption);
-        _this.addChild(_this.btnAgree);
-
-        _this.btnClose.on('mousedown', _this._onButtonDown)
-            .on('touchstart', _this._onButtonDown);
 
         var style = {
             font: '14pt Arial'
         };
-        _this.text = new PIXI.Text("", style);
-        _this.addChild(_this.text);
-        /* var btnOption = new ButtonOption();
-         btnOption.type = ButtonOption.BUTTON_NORMAL_GREEN;
-         //btnOption.textures = textureButton;
-         btnOption.text = "OK abv";
-         var btn = new Button(btnOption);
-         btn.position.x = 0;
-         _this.addChild(btn);*/
+        this.text = new PIXI.Text("", style);
+        this.addChild(this.text);
 
+
+        //init event
+        this.btnClose.on('mousedown', this._onButtonCloseDown.bind(this))
+            .on('touchstart', this._onButtonCloseDown.bind(this));
+
+        this.btnAgree.on('mousedown', this._onButtonAgreeDown.bind(this))
+            .on('touchstart', this._onButtonAgreeDown.bind(this));
+
+        this.btnNotAgree.on('mousedown', this._onButtonNotAgreeDown.bind(this))
+            .on('touchstart', this._onButtonNotAgreeDown.bind(this));
+
+        this.btnText.on('mousedown', this._onButtonTextDown.bind(this))
+            .on('touchstart', this._onButtonTextDown.bind(this));
+
+        this.visible = false;
 
     }
 
-    /*    Object.defineProperties(CompoNotify.prototype,{
-     type:{
-     value:1,
-     writable:true
-     }
-     });*/
-
-    CompoNotify.prototype._onButtonDown = function (eventData) {
-        _this.visible = false;
+    CompoNotify.prototype._onButtonCloseDown = function (eventData) {
+        this.visible = false;
+        this.parent.removeChild(this);
     }
 
-    CompoNotify.prototype.test = function (mess) {
-        this.showMessWidthAgree("This is the text!");
+    CompoNotify.prototype._onButtonAgreeDown = function (eventData) {
+        this.visible = false;
+        this.parent.removeChild(this);
+        if(this.callBackAgree)
+        {
+            this.callBackAgree();
+        }
     }
+
+    CompoNotify.prototype._onButtonNotAgreeDown = function (eventData) {
+        this.visible = false;
+        this.parent.removeChild(this);
+        if(this.callBackNotAgree)
+        {
+            this.callBackNotAgree();
+        }
+    }
+    CompoNotify.prototype._onButtonTextDown = function (eventData) {
+        this.visible = false;
+        this.parent.removeChild(this);
+        if(this.callBackButtonText)
+        {
+            this.callBackButtonText();
+        }
+    }
+
 
     CompoNotify.prototype.drawBackground = function () {
+
         var w = this.text.width + 40;
-        var h = this.text.height + 60;
-        if (w < 300)
-            w = 300;
-        if (h < 200)
-            h = 200;
+        var h = this.text.height + txtMarginTop + btnMarginTop + this.btnAgree.height + btnMarginBotton;
+        if (w < 200)
+            w = 200;
 
         this.background.clear();
         this.background.beginFill(0xE6E6E6);
         this.background.lineStyle(4, 0, 1);
         this.background.drawRect(0, 0, w, h);
         this.background.endFill();
+
+        this.shadowGraphics.clear();
+        this.shadowGraphics.beginFill(0,.1);
+        this.shadowGraphics.drawRoundedRect(0,0,w+20,h+20,10,10);
+        this.shadowGraphics.endFill();
+
+        this.shadowBackground.texture = this.shadowGraphics.generateTexture();
+
+        this.position.x = (window.innerWidth - this.width) / 2;
+        this.position.y = (window.innerHeight - this.height) / 2;
+
+
     }
 
     CompoNotify.prototype.hideAllButton = function () {
         this.btnClose.visible = false;
         this.btnAgree.visible = false;
+        this.btnNotAgree.visible = false;
+        this.btnText.visible = false;
     }
 
     CompoNotify.prototype.showMessWidthClose = function (mess) {
-        /* if(type == CompoNotify.MESSAGE)
-         {*/
+
         this.visible = true;
 
         this.text.text = mess;
@@ -145,20 +210,16 @@ define(function (require) {
         this.hideAllButton();
 
         this.btnClose.visible = true;
-        this.btnClose.position.x = this.width - this.btnClose.width - 7;
+        this.btnClose.position.x = this.width - this.btnClose.width - 23;
         this.btnClose.position.y = 3;
 
         this.text.position.x = (this.width - this.text.width) / 2;
-        this.text.position.y = (this.height - this.text.height) / 2;
+        this.text.position.y = txtMarginTop;
 
-        this.position.x = (window.innerWidth - w) / 2;
-        this.position.y = (window.innerHeight - h) / 2;
-        //}
     }
 
-    CompoNotify.prototype.showMessWidthAgree = function (mess) {
-        /* if(type == CompoNotify.MESSAGE)
-         {*/
+    CompoNotify.prototype.showMessWidthAgree = function (mess, callBackAgree) {
+
         this.visible = true;
 
         this.text.text = mess;
@@ -170,14 +231,65 @@ define(function (require) {
         this.btnAgree.visible = true;
 
         this.btnAgree.position.x = (this.width - this.btnAgree.width) / 2;
-        this.btnAgree.position.y = (this.height - this.btnAgree.height - 30);
+        this.btnAgree.position.y = (this.height - this.btnAgree.height - 20);
 
         this.text.position.x = (this.width - this.text.width) / 2;
-        this.text.position.y = (this.height - this.text.height) / 3;
+        this.text.position.y = txtMarginTop;
 
-        this.position.x = (window.innerWidth - this.width) / 2;
-        this.position.y = (window.innerHeight - this.height) / 2;
-        //}
+        this.callBackAgree = callBackAgree;
+
+    }
+
+    CompoNotify.prototype.showArgreeNotAgree = function (mess, callBackAgree, callBackNotAgree) {
+
+        this.visible = true;
+
+        this.text.text = mess;
+
+        this.drawBackground();
+
+        this.hideAllButton();
+
+        this.btnAgree.visible = true;
+
+        this.btnAgree.position.x = (this.width / 4) - (this.btnAgree.width/2);
+        this.btnAgree.position.y = (this.height - this.btnAgree.height - 20);
+
+        this.btnNotAgree.visible = true;
+
+        this.btnNotAgree.position.x = (this.width*3/4) -(this.btnNotAgree.width/ 2);
+        this.btnNotAgree.position.y = (this.height - this.btnNotAgree.height - 20);
+
+        this.text.position.x = (this.width - this.text.width) / 2;
+        this.text.position.y = txtMarginTop;
+
+        this.callBackAgree = callBackAgree;
+        this.callBackNotAgree = callBackNotAgree;
+    }
+
+    CompoNotify.prototype.showMessWidthButtonText = function (mess,btnText, callBackButtonText) {
+
+        this.visible = true;
+
+        this.text.text = mess;
+
+        this.drawBackground();
+
+        this.hideAllButton();
+
+        this.btnText.text = btnText;
+        this.text.position.x = (this.width - this.text.width) / 2;
+        this.text.position.y = txtMarginTop;
+
+        this.btnText.visible = true;
+        this.btnText.position.x = (this.width - this.btnText.width)/2;
+        this.btnText.position.y = (this.height - this.btnText.height - 20);
+
+        this.btnClose.visible = true;
+        this.btnClose.position.x = this.width - this.btnClose.width - 23;
+        this.btnClose.position.y = 3;
+
+        this.callBackButtonText = callBackButtonText;
     }
 
     return CompoNotify;

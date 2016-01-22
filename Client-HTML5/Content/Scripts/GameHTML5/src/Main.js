@@ -20,7 +20,7 @@ requirejs(
         var Container = PIXI.Container;
 
         stage = new Container();
-        renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight, {  antialias: false, transparent: true,  resolution: 1 }, false);
+        renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight ,{backgroundColor: 0xAAEEFF});
 
         renderer.view.style.position = "absolute";
         renderer.view.style.display = "block";

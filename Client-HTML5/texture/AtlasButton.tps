@@ -38,7 +38,7 @@
         <key>dataFormat</key>
         <string>json</string>
         <key>textureFileName</key>
-        <filename></filename>
+        <filename>AtlasButton.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -131,7 +131,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename></filename>
+                <filename>AtlasButton.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -180,6 +180,9 @@
             <filename>Button/BTN_DefaultGreenDown.png</filename>
             <filename>Button/BTN_DefaultGreenOver.png</filename>
             <filename>Button/BTN_DefaultGreenUp.png</filename>
+            <filename>Button/BtnCheckDown.png</filename>
+            <filename>Button/BtnCheckOver.png</filename>
+            <filename>Button/BtnCheckUp.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -5,145 +5,109 @@ define(function(require) {
 
     var PIXI = require('../../lib/pixi.min');
     var ButtonOption = require('./ButtonOption');
-    var ResourceName = require('../ResourceName');
-    var Sprite = PIXI.Sprite;
-    var Graphics = PIXI.Graphics;
-    //var _this;
-    var _option;
-
     function Button(option) {
 
-        Sprite.call(this);
+        PIXI.Sprite.call(this);
 
-        //_this = this;
+        if (typeof(option)==='undefined')
+        {
+            this.option = new ButtonOption();
+        }
+        else
+        {
+            this.option = option;
+        }
 
-        _option = option;
-
-
-        this.type = option.type;
         this.interactive = true;
         this.on('mousedown', this.onButtonDown)
             .on('touchstart', this.onButtonDown)
-
             .on('mouseup', this.onButtonUp)
             .on('touchend', this.onButtonUp)
             .on('mouseupoutside', this.onButtonUp)
             .on('touchendoutside', this.onButtonUp)
-
             .on('mouseover', this.onButtonOver)
-
             .on('mouseout', this.onButtonOut);
         this._init();
     };
 
-    Button.prototype = Object.create(Sprite.prototype);
+    Button.prototype = Object.create(PIXI.Sprite.prototype);
     Button.prototype.constructor = Button;
 
     Object.defineProperties(ButtonOption.prototype, {
-        type: {
-            value: 1,
+        option: {
+            value: null,
             writable: true
-        }
-    });
-
-    Object.defineProperties(ButtonOption.prototype, {
+        },
         textureButtonUp: {
             value: null,
             writable: true
-        }
-    });
-
-    Object.defineProperties(ButtonOption.prototype, {
+        },
         textureButtonDown: {
             value: null,
             writable: true
-        }
-    });
-
-    Object.defineProperties(ButtonOption.prototype, {
+        },
         textureButtonOver: {
             value: null,
             writable: true
-        }
-    });
-
-    Object.defineProperties(ButtonOption.prototype, {
-        text: {
-            value: "",
+        },
+        _text: {
+            value: null,
             writable: true
-        }
-    });
-
-    Object.defineProperties(ButtonOption.prototype, {
+        },
         style: {
             value: null,
             writable: true
         }
+
     });
 
+    Object.defineProperty(Button.prototype, 'text', {
+        get: function() {
+            return this._text.text;
+        },
+        set: function(value) {
+            this._text.text = value;
+            this._text.x = (this.textureButtonUp.width - this._text.width)/2;
+            this._text.y = (this.textureButtonUp.height - this._text.height)/3;;
+        }
+    });
+
+
     Button.prototype._init = function(){
-        if(this.type == ButtonOption.BUTTON_DEFAULT_GREEN)
+
+        if(this.option.textureButtonUp)
         {
-
-            this.textureButtonUp = window.PIXI.loader.resources[ResourceName.ATLAS_BUTTON].textures[ResourceName.BTN_DEFAULT_GREEN_UP];
-            this.textureButtonOver = window.PIXI.loader.resources[ResourceName.ATLAS_BUTTON].textures[ResourceName.BTN_DEFAULT_GREEN_OVER];
-            this.textureButtonDown = window.PIXI.loader.resources[ResourceName.ATLAS_BUTTON].textures[ResourceName.BTN_DEFAULT_GREEN_DOWN];
-
+            this.textureButtonUp = this.option.textureButtonUp;
             this.texture = this.textureButtonUp;
-
-            this.style = {
-                font : '14pt Arial',
-                fill : '#FFFFFF',
-                //stroke : '#4a1850',
-               // strokeThickness : 5,
-               // dropShadow : true,
-               // dropShadowColor : '#000000',
-               // dropShadowAngle : Math.PI / 6,
-               // dropShadowDistance : 6,
-               // wordWrap : true,
-              //  wordWrapWidth : 440
-            };
-
-
-            //text = new PIXI.Text(_option.text,style);
-            this.text = new PIXI.Text(_option.text,this.style);
-            this.text.y = 8;
-            this.text.x = (this.textureButtonUp.width - this.text.width)/2;
-            this.addChild(this.text);
-
         }
 
-        if(this.type == ButtonOption.BUTTON_IMAGES)
+        if(this.option.textureButtonDown)
         {
-            if(_option.textureButtonUp)
-            {
-                this.textureButtonUp = _option.textureButtonUp;
-                this.texture = this.textureButtonUp;
-            }
-
-            if(_option.textureButtonDown)
-            {
-                this.textureButtonDown = _option.textureButtonDown;
-            }
-
-            if(_option.textureButtonOver)
-            {
-                this.textureButtonOver = _option.textureButtonOver;
-            }
+            this.textureButtonDown = this.option.textureButtonDown;
         }
+
+        if(this.option.textureButtonOver)
+        {
+            this.textureButtonOver = this.option.textureButtonOver;
+        }
+
+        this._text = new PIXI.Text("",this.option.textStyleUp);
+        this.addChild(this._text);
 
     }
 
+    Button.prototype.setText = function(value){
+        this._text.text = value;
+    }
+
     Button.prototype.onButtonDown = function(){
+
         this.isdown = true;
-        if(this.type == ButtonOption.BUTTON_DEFAULT_GREEN)
-        {
-            this.style = { font : '14pt Arial',
-                fill : '#FFFF92',
-            };
-            this.text.style = this.style;
-            this.text.y = 9;
-        }
+
+        this._text.style = this.option.textStyleDown;
+
+        this._text.x = (this.textureButtonUp.width - this._text.width)/2;
+        this._text.y = (this.textureButtonUp.height - this._text.height)/3 +1;
 
         this.texture = this.textureButtonDown;
     }
@@ -154,26 +118,16 @@ define(function(require) {
         if (this.isOver)
         {
             this.texture = this.textureButtonOver;
-            if(this.type == ButtonOption.BUTTON_DEFAULT_GREEN)
-            {
-                this.style = { font : '14pt Arial',
-                    fill : '#FFFF92',
-                };
-                this.text.style = this.style;
-                this.text.y = 8;
-            }
+            this._text.style = this.option.textStyleOver;
+            this._text.x = (this.textureButtonUp.width - this._text.width)/2;
+            this._text.y = (this.textureButtonUp.height - this._text.height)/3;
         }
         else
         {
             this.texture = this.textureButtonUp;
-            if(this.type == ButtonOption.BUTTON_DEFAULT_GREEN)
-            {
-                this.style = { font : '14pt Arial',
-                    fill : '#FFFFFF',
-                };
-                this.text.style = this.style;
-                this.text.y = 8;
-            }
+            this._text.style = this.option.textStyleUp;
+            this._text.x = (this.textureButtonUp.width - this._text.width)/2;
+            this._text.y = (this.textureButtonUp.height - this._text.height)/3;
         }
     }
 
@@ -185,15 +139,9 @@ define(function(require) {
             return;
         }
 
-        if(this.type == ButtonOption.BUTTON_DEFAULT_GREEN)
-        {
-            this.style = { font : '14pt Arial',
-                fill : '#FFFF92',
-            };
-            this.text.style = this.style;
-            this.text.y = 8;
-        }
-
+        this._text.style = this.option.textStyleOver;
+        this._text.x = (this.textureButtonUp.width - this._text.width)/2;
+        this._text.y = (this.textureButtonUp.height - this._text.height)/3;
         this.texture = this.textureButtonOver;
 
     }
@@ -205,15 +153,10 @@ define(function(require) {
         {
             return;
         }
-        if(this.type == ButtonOption.BUTTON_DEFAULT_GREEN)
-        {
-            this.style = { font : '14pt Arial',
-                fill : '#FFFFFF',
-            };
-            this.text.style = this.style;
-            this.text.y = 8;
-        }
 
+        this._text.style = this.option.textStyleUp;
+        this._text.x = (this.textureButtonUp.width - this._text.width)/2;
+        this._text.y = (this.textureButtonUp.height - this._text.height)/3;
         this.texture = this.textureButtonUp;
 
     }
