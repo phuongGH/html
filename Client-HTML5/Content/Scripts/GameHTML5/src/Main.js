@@ -1,7 +1,6 @@
 /**
  * Created by datnt on 1/8/2016.
  */
-
 requirejs(
     [
         "../lib/pixi.min",
@@ -20,8 +19,8 @@ requirejs(
         var Container = PIXI.Container;
 
         stage = new Container();
-        renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight ,{backgroundColor: 0xAAEEFF});
-
+        renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight ,{backgroundColor: 0xAAEEFF,preserveDrawingBuffer:true});
+        window.renderer = renderer;
         renderer.view.style.position = "absolute";
         renderer.view.style.display = "block";
 
@@ -60,6 +59,19 @@ requirejs(
                 if(stage.children[i].onResize != undefined) {
                     stage.children[i].onResize(event);
                 }
+            }
+        }
+
+        window.fullscreen = function(){
+            var element = document.documentElement;
+            if(element.requestFullscreen) {
+                element.requestFullscreen();
+            } else if(element.mozRequestFullScreen) {
+                element.mozRequestFullScreen();
+            } else if(element.webkitRequestFullscreen) {
+                element.webkitRequestFullscreen();
+            } else if(element.msRequestFullscreen) {
+                element.msRequestFullscreen();
             }
         }
     }

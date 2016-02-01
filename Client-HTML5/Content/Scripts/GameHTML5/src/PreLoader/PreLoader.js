@@ -3,8 +3,8 @@
  */
 
 define(function(require) {
-    //Import
 
+    //Import
     var PIXI = require('../../lib/pixi.min');
     var Font = require('../../lib/Font');
     var Proton = require('../../lib/proton-1.0.0.min');
@@ -13,8 +13,8 @@ define(function(require) {
     var ResourceName = require('../ResourceName');
     var Button = require('../Components/Button');
     var ButtonOption = require('../Components/ButtonOption');
-    var CompoNotify = require('../CompoNotify/CompoNotify');
-    var CompoChat = require('../CompoChat/CompoChat');
+    //var CompoNotify = require('../CompoNotify/CompoNotify');
+    //var CompoChat = require('../CompoChat/CompoChat');
 
     var Loader = PIXI.loader;
     var Container = PIXI.Container;
@@ -39,7 +39,6 @@ define(function(require) {
     PreLoader.prototype.constructor = PreLoader;
 
     //Define Property
-
     Object.defineProperties(PreLoader.prototype, {
         compoNotify: {
             value: undefined,
@@ -66,6 +65,7 @@ define(function(require) {
     PreLoader.prototype._onLoadFontComplete = function(){
         console.log("font has loaded");
         Loader.add(ResourceName.ATLAS_BUTTON,"http://localhost:63342/Client-HTML5/Content/Theme/GameHTML5/images/AtlasButton.json")
+        Loader.add(ResourceName.ATLAS_ITEMS,"http://localhost:63342/Client-HTML5/Content/Theme/GameHTML5/images/AtlasItems.json")
             .add("http://localhost:63342/Client-HTML5/Content/Theme/GameHTML5/fonts/A Yummy Apology.fnt")
             .on("progress", this._onLoadingProgress).load(this._onLoadingComplete.bind(this));
     }
@@ -76,6 +76,10 @@ define(function(require) {
     }
 
     PreLoader.prototype._onLoadingComplete = function(){
+        /*var textureBG = PIXI.Texture.fromImage("http://localhost:63342/Client-HTML5/Content/Theme/GameHTML5/images/BackGround.png");
+        var backGround = new PIXI.Sprite(textureBG);
+        this.addChild(backGround);
+
         var textureButton = Loader.resources[ResourceName.ATLAS_BUTTON].textures;
 
         var buttonOption = new ButtonOption();
@@ -90,8 +94,10 @@ define(function(require) {
 
         this.compoChat = new CompoChat();
         this.compoChat.x = 10;
-        this.compoChat.y = 100;
-        this.addChild(this.compoChat);
+        this.compoChat.y = 380;
+        this.addChild(this.compoChat);*/
+
+
 
     }
 
@@ -101,11 +107,102 @@ define(function(require) {
 
     PreLoader.prototype.onOpenNotify = function() {
 
-        if(this.children.indexOf(this.compoNotify)===-1)
+        /*var data = window.renderer.view.toDataURL("image/png", 1);
+        console.log(data);*/
+        /*if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen(); // Firefox
+            } else if (document.documentElement.webkitRequestFullscreen) {
+                document.documentElement.webkitRequestFullscreen(); // Chrome and Safari
+            } else if (document.documentElement.msRequestFullscreen) {
+                document.documentElement.msRequestFullscreen(); // IE
+            }
+        }
+        else
+        {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            }
+        }*/
+
+       /* var divObj = document.documentElement;  //change to whatever element you want
+
+        if (divObj.requestFullscreen){
+            if (document.fullScreenElement) {
+                document.cancelFullScreen();
+            } else {
+                divObj.requestFullscreen();
+            }
+        }
+
+        else if (divObj.msRequestFullscreen){
+            if (document.msFullscreenElement) {
+                document.msExitFullscreen();
+            } else {
+                divObj.msRequestFullscreen();
+            }
+        }
+
+        else if (divObj.mozRequestFullScreen){
+            if (document.mozFullScreenElement) {
+                document.mozCancelFullScreen();
+            } else {
+                divObj.mozRequestFullScreen();
+            }
+        }
+
+        else if (divObj.webkitRequestFullscreen){
+            if (document.webkitFullscreenElement) {
+                document.webkitCancelFullScreen();
+            } else {
+                divObj.webkitRequestFullscreen();
+            }
+        }*/
+
+        //Use the specification method before using prefixed versions
+        /*var divObj = document.documentElement;
+        if (divObj.requestFullscreen) {
+            divObj.requestFullscreen();
+        }
+        else if (divObj.msRequestFullscreen) {
+            divObj.msRequestFullscreen();
+        }
+        else if (divObj.mozRequestFullScreen) {
+            divObj.mozRequestFullScreen();
+        }
+        else if (divObj.webkitRequestFullscreen) {
+            divObj.webkitRequestFullscreen();
+        } else {
+            var wscript = new ActiveXObject("Wscript.shell");
+            wscript.SendKeys("{F11}");
+            console.log("Fullscreen API is not supported");
+        }*/
+
+        launchFullscreen(document.documentElement);
+
+        /*if(document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        } else if(document.documentElement.mozRequestFullScreen) {
+            document.documentElement.mozRequestFullScreen();
+        } else if(document.documentElement.webkitRequestFullscreen) {
+            document.documentElement.webkitRequestFullscreen();
+        } else if(document.documentElement.msRequestFullscreen) {
+            document.documentElement.msRequestFullscreen();
+        }*/
+
+        /*if(this.children.indexOf(this.compoNotify)===-1)
         {
            this.addChild(this.compoNotify);
         }
-        this.compoNotify.showMessWidthClose("aaaassssssssssssssss\nwwwwwwwwwwwwwwwww");
+        this.compoNotify.showMessWidthClose("aaaassssssssssssssss\nwwwwwwwwwwwwwwwww");*/
         //this.compoNotify.showMessWidthButtonText("fff","Xác nhận");
     }
 

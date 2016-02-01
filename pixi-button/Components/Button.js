@@ -4,7 +4,7 @@
 'use strict';
 define(function(require) {
 
-    var PIXI = require('../../lib/pixi.min');
+    var PIXI = require('../lib/pixi.min');
     var ButtonOption = require('./ButtonOption');
 
     /*
@@ -25,6 +25,7 @@ define(function(require) {
         }
 
         this.interactive = true;
+        this.buttonMode = true;
         this.on('mousedown', this.onButtonDown)
             .on('touchstart', this.onButtonDown)
 

@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../../Content/Theme/GameHTML5/css/reset.css">
         <link rel="stylesheet" href="../../Content/Theme/GameHTML5/css/clearfix.css">
 
-        <style type="text/css">
+<!--        <style type="text/css">
 
             body {
                 background-color: #f0f0f0;
@@ -18,7 +18,10 @@
                 position: absolute;
             }
 
-        </style>
+        </style>-->
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
     </head>
     <body>
         <!--<div id="divflashId">
@@ -36,7 +39,10 @@
                     wmode="window"
                     src="/Data/Games/PreLoader.swf">
         </div>-->
-        <div id="container"></div>
+        <div id="container">
+            <button id="btn-01">Click to Go into Fullscreen Mode</button>
+        </div>
+        <script src="test.js"></script>
         <script type="application/javascript" src="../../Content/Scripts/GameHTML5/lib/require.js" data-main="../../Content/Scripts/GameHTML5/src/Main"></script>
     </body>
 </html>

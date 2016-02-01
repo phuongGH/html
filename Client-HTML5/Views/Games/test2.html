@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WebGL</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            background: white;
+        }
+        button {
+            position: absolute;
+        }
+        .fs button {
+            display: none;
+        }
+        #pauseOverlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: none;
+            font-size: 60px;
+            font-family: monospace;
+            letter-spacing: 15px;
+            color: white;
+            text-align: center;
+            text-shadow: 0 0 10px black;
+            padding-top: 20%;
+        }
+        .paused #pauseOverlay {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div id="pauseOverlay">-paused-</div>
+
+<button onclick="document.documentElement.requestFullScreen();document.documentElement.requestPointerLock();">Fullscreen</button>
+
+<script src="r65/three.min.js"></script>
+
+<script src="r65/ColladaLoader.js"></script>
+
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.5/require.min.js"></script> -->
+<script src="lib/require.js"></script>
+
+<script>
+    require(['lib/dibox', 'src/bindings-step4', 'lib/game-shim.js'], function (DIBox, bindings, _) {
+
+        var camera, scene, renderer;
+
+        var SCREEN_HEIGHT = window.innerHeight;
+        var SCREEN_WIDTH = window.innerWidth;
+
+        var isFullscreen = false;
+        var isPaused = false;
+
+
+        init();
+        animate();
+
+        function init () {
+
+            var container = document.createElement('div');
+            document.body.appendChild(container);
+
+
+            /* Scene & Camera */
+
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(25, SCREEN_WIDTH / SCREEN_HEIGHT);
+            scene.add(camera);
+
+            camera.position.set(14, 0.7, -9);
+            camera.rotation.set(0, -0.5, 0);
+
+            scene.fog = new THREE.FogExp2(0xefd1b5, 0.075);
+
+
+            /* Renderer */
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+            renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+            renderer.setClearColor(0xefd1b5);
+            container.appendChild(renderer.domElement);
+
+
+            /* Lights */
+
+            scene.add(new THREE.AmbientLight(0x808080));
+
+            var directionalLight = new THREE.DirectionalLight(0x802000);
+            directionalLight.position.set(50, 40, 10).normalize();
+            scene.add(directionalLight);
+
+
+            /* Load Model */
+
+            loadModel();
+
+
+            /* Controls */
+
+            DIBox.setBindings(bindings);
+            DIBox.configureDeviceHandler('gamepad', 'deadzone', 0.2);
+
+
+            window.addEventListener('resize', onWindowResize, false);
+            document.addEventListener('fullscreenchange', onFullscreenchange, false);
+        }
+
+        function loadModel () {
+
+            var loader = new THREE.ColladaLoader();
+            loader.options.convertUpAxis = true;
+            loader.load('model/bigsmoke2.dae', function (collada) {
+
+                var object = collada.scene;
+
+                object.scale.x = 0.01;
+                object.scale.y = 0.01;
+                object.scale.z = 0.01;
+
+                scene.add(object);
+            });
+
+        }
+
+        function onWindowResize () {
+
+            var SCREEN_HEIGHT = window.innerHeight;
+            var SCREEN_WIDTH = window.innerWidth;
+
+            camera.aspect = SCREEN_WIDTH / SCREEN_HEIGHT;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+        }
+
+        function onFullscreenchange () {
+            // document.fullscreenEnabled doesn't work, sadly
+            isFullscreen = !!document.fullscreenElement;
+
+            document.documentElement.classList.toggle('fs');
+
+            DIBox.configureDeviceHandler('mouse', 'infiniteXAxis', isFullscreen);
+        }
+
+        function animate () {
+
+            requestAnimationFrame(animate);
+
+            if (DIBox.input.pause) {
+                isPaused = !isPaused;
+                DIBox.input.pause = false;
+                document.documentElement.classList.toggle('paused');
+            }
+
+            if (!isPaused) {
+                processInput();
+                render();
+            }
+        }
+
+        function processInput () {
+            var input = DIBox.input;
+
+            if (input.forward) {
+                camera.translateZ(-0.05);
+            }
+            if (input.backward) {
+                camera.translateZ(0.05);
+            }
+
+            camera.translateX(( input.strafeRight - input.strafeLeft) / 50);
+
+            if (isFullscreen) {
+                camera.rotation.y -= input.turn / SCREEN_WIDTH * 2;
+                input.turn = 0;
+            } else {
+                camera.rotation.y += input.turn / ( SCREEN_WIDTH / 20 );
+            }
+        }
+
+        function render () {
+            renderer.render(scene, camera);
+        }
+
+    });
+
+</script>
+</body>
+</html>

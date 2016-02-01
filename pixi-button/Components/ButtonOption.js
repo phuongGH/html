@@ -14,9 +14,9 @@ define(function(require) {
      */
     function ButtonOption() {
 
-        this.textureButtonUp = PIXI.loader.resources[ResourceName.ATLAS_BUTTON].textures[ResourceName.BTN_DEFAULT_GREEN+"Up.png"];
-        this.textureButtonOver = PIXI.loader.resources[ResourceName.ATLAS_BUTTON].textures[ResourceName.BTN_DEFAULT_GREEN+"Over.png"];
-        this.textureButtonDown = PIXI.loader.resources[ResourceName.ATLAS_BUTTON].textures[ResourceName.BTN_DEFAULT_GREEN+"Down.png"];
+        this.textureButtonUp = window.PIXI.loader.resources[ResourceName.ATLAS_BUTTON].textures[ResourceName.BTN_DEFAULT_GREEN+"Up.png"];
+        this.textureButtonOver = window.PIXI.loader.resources[ResourceName.ATLAS_BUTTON].textures[ResourceName.BTN_DEFAULT_GREEN+"Over.png"];
+        this.textureButtonDown = window.PIXI.loader.resources[ResourceName.ATLAS_BUTTON].textures[ResourceName.BTN_DEFAULT_GREEN+"Down.png"];
 
     };
 
@@ -28,9 +28,9 @@ define(function(require) {
      * @param textureName {String}tên ảnh sau khi đã loại bỏ hậu tố "Up.png, Over.png, Down.png"
      */
     ButtonOption.prototype.setButtonTexture = function(atlasName,textureName){
-        this.textureButtonUp = PIXI.loader.resources[atlasName].textures[textureName+"Up.png"];
-        this.textureButtonOver = PIXI.loader.resources[atlasName].textures[textureName+"Over.png"];
-        this.textureButtonDown = PIXI.loader.resources[atlasName].textures[textureName+"Down.png"];
+        this.textureButtonUp = window.PIXI.loader.resources[atlasName].textures[textureName+"Up.png"];
+        this.textureButtonOver = window.PIXI.loader.resources[atlasName].textures[textureName+"Over.png"];
+        this.textureButtonDown = window.PIXI.loader.resources[atlasName].textures[textureName+"Down.png"];
     };
 
     Object.defineProperties(ButtonOption.prototype, {
