@@ -1,0 +1,166 @@
+===========================================================================================================
+JavaScript File
+
+/**
+ * Created by ${USER} on ${DATE}.
+ */
+ 'use strict';
+define(function(require) {
+    ${NAME}.prototype = Object.create(Object.prototype);
+    ${NAME}.prototype.constructor = ${NAME};
+    
+    Object.defineProperties(${NAME}.prototype, {});
+    
+    function ${NAME}() {
+        Object.call(this);
+    }
+    
+    return ${NAME};
+});
+===========================================================================================================
+
+===========================================================================================================
+New Screen
+
+/**
+ * Created by ${USER} on ${DATE}.
+ */
+'use strict';
+define(function (require) {
+    var GeneralScreen = require("ui/screens/GeneralScreen");
+
+    ${NAME}.prototype = Object.create(GeneralScreen.prototype);
+    ${NAME}.prototype.constructor = ${NAME};
+
+    Object.defineProperties(${NAME}.prototype, {
+
+    });
+
+    /**
+     *
+     * @param preLoader
+     * @constructor
+     */
+    function ${NAME}(preLoader) {
+        GeneralScreen.call(this, preLoader);
+    }
+
+    /**
+     *Create UserInterface of this screen
+     */
+    ${NAME}.prototype.init = function () {
+        GeneralScreen.prototype.init.call(this);
+
+        if (this._isDisposed) {
+            this._isDisposed = false;
+        }
+    };
+
+    /**
+     *Destroy UserInterface of this screen
+     */
+    ${NAME}.prototype.dispose = function () {
+        GeneralScreen.prototype.dispose.call(this);
+    };
+
+    /**
+     *Resize all UserInterface of this screen IF NEED
+     * @param {Window.Event} event
+     */
+    ${NAME}.prototype.onResize = function (event) {
+        GeneralScreen.prototype.onResize.call(this, event);
+    };
+
+    /**
+     *Use to animate UserInterface of this screen IF NEED
+     * @param {Number} deltaTime Time has passed in miliseconds
+     */
+    ${NAME}.prototype.onEnterFrame = function (deltaTime) {
+        GeneralScreen.prototype.onEnterFrame.call(this, deltaTime);
+    };
+
+    /**
+     *Update user infomation of this screen IF NEED
+     * @param {Ojbect} userInfo User Infomation Object
+     */
+    ${NAME}.prototype.updateUserInfo = function (userInfo) {
+        GeneralScreen.prototype.updateUserInfo.call(this, userInfo);
+    };
+
+    return ${NAME};
+});
+===========================================================================================================
+
+===========================================================================================================
+New Compnent
+
+/**
+ * Created by ${USER} on ${DATE}.
+ */
+'use strict';
+define(function (require) {
+    var GeneralComponent = require("ui/components/GeneralComponent");
+
+    ${NAME}.prototype = Object.create(GeneralComponent.prototype);
+    ${NAME}.prototype.constructor = ${NAME};
+
+    Object.defineProperties(${NAME}.prototype, {
+    
+    });
+
+    /**
+     *
+     * @param preLoader
+     * @constructor
+     */
+    function ${NAME}(preLoader) {
+        GeneralComponent.call(this, preLoader);
+
+        this.init();
+    }
+
+    /**
+     *Create UserInterface of this component
+     */
+    ${NAME}.prototype.init = function () {
+        GeneralComponent.prototype.init.call(this);
+
+        if (this._isDisposed) {
+            this._isDisposed = false;
+        }
+    };
+
+    /**
+     *Destroy UserInterface of this component
+     */
+    ${NAME}.prototype.dispose = function () {
+        GeneralComponent.prototype.dispose.call(this);
+    };
+
+    /**
+     *Resize all UserInterface of this component IF NEED
+     * @param {Window.Event} event
+     */
+    ${NAME}.prototype.onResize = function (event) {
+        GeneralComponent.prototype.onResize.call(this, event);
+    };
+
+    /**
+     *Use to animate UserInterface of this component IF NEED
+     * @param {Number} deltaTime Time has passed in miliseconds
+     */
+    ${NAME}.prototype.onEnterFrame = function (deltaTime) {
+        GeneralComponent.prototype.onEnterFrame.call(this, deltaTime);
+    };
+
+    /**
+     *Update user infomation of this component IF NEED
+     * @param {Ojbect} userInfo User Infomation Object
+     */
+    ${NAME}.prototype.updateUserInfo = function (userInfo) {
+        GeneralComponent.prototype.updateUserInfo.call(this, userInfo);
+    };
+
+    return ${NAME};
+});
+===========================================================================================================

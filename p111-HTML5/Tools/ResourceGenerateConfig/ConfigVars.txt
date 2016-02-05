@@ -1,0 +1,8 @@
+ResourcePath:../Content/Scripts/GameHTML5/lib/resources/default/atlas
+GeneratePath:../Content/Scripts/GameHTML5/src/utils/resourceregister
+GenerateFile:ResourceGeneral.js
+TemplateGeneral:TemplateGeneral.txt
+TemplateGame:TemplateGame.txt
+IsBackup:1
+BackupPath:../Content/Scripts/GameHTML5/src/utils/resourceregister
+MapFileName:samloc|SamLoc|tlmn|TLMN

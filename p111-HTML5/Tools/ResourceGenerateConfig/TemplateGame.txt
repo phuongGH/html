@@ -1,0 +1,30 @@
+/**
+ * Created by MegaMan on 1/28/2016.
+ */
+'use strict';
+define(function (require) {
+    Resource@NameGame.prototype = Object.create(Object.prototype);
+    Resource@NameGame.prototype.constructor = Resource@NameGame;
+
+    Object.defineProperties(Resource@NameGame.prototype, {});
+
+    function Resource@NameGame() {
+        throw new Error('Cannot instance this class');
+    }
+
+    Resource@NameGame.registerResource = function() {
+        Object.assign(ResourceManager.Atlas, {
+            @Pattern@SpriteSheetName: {
+                name: '@SpriteSheetName',
+                url: '',
+                textures: {
+					@ImgName@ImageName: @Value,
+					@EndImgName
+                }
+            },
+			@EndPattern
+        });
+    };
+
+    return Resource@NameGame;
+});

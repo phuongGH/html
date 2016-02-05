@@ -13,6 +13,7 @@ define(function(require) {
     var ResourceName = require('../ResourceName');
     var Button = require('../Components/Button');
     var ButtonOption = require('../Components/ButtonOption');
+    var GameLoader = require('../GameLoader');
     //var CompoNotify = require('../CompoNotify/CompoNotify');
     //var CompoChat = require('../CompoChat/CompoChat');
 
@@ -76,6 +77,14 @@ define(function(require) {
     }
 
     PreLoader.prototype._onLoadingComplete = function(){
+
+        var btnShowGame = new Button();
+        btnShowGame.text = "Show Game";
+        this.addChild(btnShowGame);
+
+        btnShowGame.on('mousedown', this.showGameScreen.bind(this))
+                    .on('touchstart', this.showGameScreen.bind(this));
+
         /*var textureBG = PIXI.Texture.fromImage("http://localhost:63342/Client-HTML5/Content/Theme/GameHTML5/images/BackGround.png");
         var backGround = new PIXI.Sprite(textureBG);
         this.addChild(backGround);
@@ -204,6 +213,17 @@ define(function(require) {
         }
         this.compoNotify.showMessWidthClose("aaaassssssssssssssss\nwwwwwwwwwwwwwwwww");*/
         //this.compoNotify.showMessWidthButtonText("fff","Xác nhận");
+    }
+
+    PreLoader.prototype.showGameScreen = function(){
+
+        for (var i = this.children.length - 1; i >= 0; i--)
+        {
+            this.removeChild(this.children[i]);
+        }
+
+        var gameLoader = new GameLoader();
+        this.addChild(gameLoader);
     }
 
     return PreLoader;

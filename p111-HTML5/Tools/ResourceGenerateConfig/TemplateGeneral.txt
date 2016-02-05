@@ -1,0 +1,30 @@
+/**
+ * Created by MegaMan on 1/28/2016.
+ */
+'use strict';
+define(function () {
+    ResourceGeneral.prototype = Object.create(Object.prototype);
+    ResourceGeneral.prototype.constructor = ResourceGeneral;
+
+    Object.defineProperties(ResourceGeneral.prototype, {});
+
+    function ResourceGeneral() {
+        throw new Error('Cannot instance this class');
+    }
+
+    ResourceGeneral.registerResource = function() {
+        ResourceManager.Atlas = {
+            @Pattern@SpriteSheetName: {
+                name: '@SpriteSheetName',
+                url: '',
+                textures: {
+					@ImgName@ImageName: @Value,
+					@EndImgName
+                }
+            },
+			@EndPattern
+        };
+    };
+
+    return ResourceGeneral;
+});

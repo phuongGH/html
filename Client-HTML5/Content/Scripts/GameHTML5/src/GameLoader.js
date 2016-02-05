@@ -3,9 +3,10 @@
  */
 define(function(require){
 
-    var GlobalConstants = require('GlobalConstance');
+    var GlobalConstants = require('GlobalConstants');
+    var GameScreen = require('GameScreen')
 
-    GameLoader.prototype = Object.create(PIXI.Container);
+    GameLoader.prototype = Object.create(PIXI.Container.prototype);
     GameLoader.prototype.constructor = GameLoader;
 
     Object.defineProperties(GameLoader.prototype,{
@@ -13,12 +14,20 @@ define(function(require){
         _currentScreen:{
             value:0,
             writable:true
+        },
+        lobbyScreen:{
+            value:'undefined',
+            writable:true
+        },
+        gameScreen:{
+            value:'undefined',
+            writable:true
         }
-
     });
 
     function GameLoader(){
         PIXI.Container.call(this);
+        this.gameScreen = new GameScreen(this);
     };
 
     GameLoader.prototype.isGame = function(){
@@ -35,6 +44,14 @@ define(function(require){
             return;
         }
         this._currentScreen = GlobalConstants.GAME_SCREEN;
+
+        if(this.children.indexOf(this.lobbyScreen)>=0)
+        {
+            this.removeChild(this.lobbyScreen);
+        }
+
+        this.addChild(this.gameScreen);
+
     };
 
     return GameLoader;

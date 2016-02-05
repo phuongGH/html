@@ -1,0 +1,36 @@
+{"frames": {
+
+"LoadingBGDefault.png":
+{
+	"frame": {"x":2,"y":2,"w":1000,"h":670},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1000,"h":670},
+	"sourceSize": {"w":1000,"h":670}
+},
+"LoadingBarBGDefault.png":
+{
+	"frame": {"x":2,"y":674,"w":464,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":464,"h":38},
+	"sourceSize": {"w":464,"h":38}
+},
+"LoadingBarProgressDefault.png":
+{
+	"frame": {"x":468,"y":674,"w":450,"h":26},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":450,"h":26},
+	"sourceSize": {"w":450,"h":26}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "AtlasLoadingDefault.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:fe924187d69c79570bb4928d832c5b55$"
+}
+}

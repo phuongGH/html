@@ -1,0 +1,300 @@
+{"frames": {
+
+"StarLevel1.png":
+{
+	"frame": {"x":2,"y":2,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel10.png":
+{
+	"frame": {"x":25,"y":2,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel11.png":
+{
+	"frame": {"x":48,"y":2,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel12.png":
+{
+	"frame": {"x":71,"y":2,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel13.png":
+{
+	"frame": {"x":94,"y":2,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel14.png":
+{
+	"frame": {"x":117,"y":2,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel15.png":
+{
+	"frame": {"x":140,"y":2,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel16.png":
+{
+	"frame": {"x":163,"y":2,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel17.png":
+{
+	"frame": {"x":186,"y":2,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel18.png":
+{
+	"frame": {"x":209,"y":2,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel19.png":
+{
+	"frame": {"x":2,"y":22,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel2.png":
+{
+	"frame": {"x":25,"y":22,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel20.png":
+{
+	"frame": {"x":48,"y":22,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel21.png":
+{
+	"frame": {"x":71,"y":22,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel22.png":
+{
+	"frame": {"x":94,"y":22,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel23.png":
+{
+	"frame": {"x":94,"y":22,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel24.png":
+{
+	"frame": {"x":117,"y":22,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel25.png":
+{
+	"frame": {"x":140,"y":22,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel26.png":
+{
+	"frame": {"x":140,"y":22,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel27.png":
+{
+	"frame": {"x":163,"y":22,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel28.png":
+{
+	"frame": {"x":186,"y":22,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel29.png":
+{
+	"frame": {"x":186,"y":22,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel3.png":
+{
+	"frame": {"x":209,"y":22,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel30.png":
+{
+	"frame": {"x":2,"y":42,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel31.png":
+{
+	"frame": {"x":25,"y":42,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel32.png":
+{
+	"frame": {"x":25,"y":42,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel4.png":
+{
+	"frame": {"x":48,"y":42,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel5.png":
+{
+	"frame": {"x":71,"y":42,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel6.png":
+{
+	"frame": {"x":94,"y":42,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel7.png":
+{
+	"frame": {"x":117,"y":42,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel8.png":
+{
+	"frame": {"x":140,"y":42,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"StarLevel9.png":
+{
+	"frame": {"x":163,"y":42,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "AtlasLevelStar.png",
+	"format": "RGBA8888",
+	"size": {"w":232,"h":62},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:8b0b93bbb67118afb88a736b7884bf5c:f4dbfe1aa5047551615cf8f70909b0f7:462f4359ee718b40f3fde0d97a5446e1$"
+}
+}

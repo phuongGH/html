@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>P111</title>
+
+        <link rel="stylesheet" href="../../Content/Theme/GameHTML5/css/reset.css">
+        <link rel="stylesheet" href="../../Content/Theme/GameHTML5/css/clearfix.css">
+
+        <style type="text/css">
+
+            body {
+                background-color: #f0f0f0;
+                margin: 0px;
+                overflow: hidden;
+            }
+            #gameContainer {
+                position: relative;
+                margin: 10px auto;
+                width: 1000px;
+                height: 670px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!--<div id="divflashId">
+            <embed
+                    width="100%"
+                    height="100%"
+                    pluginspage="http://www.macromedia.com/go/getflashplayer"
+                    name="flashId"
+                    flashvars="varstr=c196345cfe07ac64e575b875b92969fc9fee7b29cd6929d1f80fedb577f8baa99e52d31ee944f5af7adf6bc1acee4039d1eecb38c85b7c04bfa1b38dd5eab93fd463db00f1fb686c73cd86808a7636fa105b71e66aa30fdfcdf8b635b7218729e4cdbeff29103f124a38a1063ebdfbc3eee7b988d352ec229200dd8f0784f78d3fa1da2045290f48f134a552335ff08713b87dec0e42de1ae285492590ee14e8edb87590507b70b79c38edba9ec721eac91f91b4c317a7018f4304419e8a92f7717ea0090060a7c74eb2e21a1a7cf656c828ddd321a24ece1fcfae0021e45b257cef"
+                    type="application/x-shockwave-flash"
+                    bgcolor="#000000"
+                    quality="high"
+                    scale="ShowAll"
+                    allowfullscreen="true"
+                    wmode="window"
+                    src="/Data/Games/PreLoader.swf">
+        </div>-->
+        <div id="gameContainer" data-gameID="40" data-userID="201" data-email="l1@l1.com" data-zone="MGame" data-pass="12-93-91-B9-43-E0-8B-76-26-82-88-C7-1A-05-3C-50-3A-20-65-BE"></div>
+        <script type="application/javascript">
+            global = typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {};
+
+            var require = {
+                deps: ["../../Content/Scripts/GameHTML5/src/configs/PreLoaderConfig.js"],
+                callback: function(Config) {
+                    require.config({
+                        baseUrl: PreLoaderConfig.PathToSrcCode,
+                        paths: {
+                            'PIXIEXTENDS' : PreLoaderConfig.PathToLibCode + 'pixiextends',
+                            'GOWN' : PreLoaderConfig.PathToLibCode + 'gown',
+                            'LoadingScreen': PreLoaderConfig.PathToLoadingClass,
+                            'ResourceGame': PreLoaderConfig.PathToResourceGameClass
+                        },
+                        shim: {
+                            'PIXIEXTENDS': [PreLoaderConfig.PathToLibCode + 'pixi.js'],
+                            'GOWN': [PreLoaderConfig.PathToLibCode + 'pixi.js'],
+                            'PreLoader': [PreLoaderConfig.PathToLibCode + 'pixi.js', PreLoaderConfig.PathToLibCode + 'stats.js', PreLoaderConfig.PathToLibCode + 'TweenMax.js']
+                        }
+                    });
+
+                    requirejs(['Main'], function (Main) {});
+                }
+            };
+        </script>
+        <script type="application/javascript" src="../../Content/Scripts/GameHTML5/lib/require.js"></script>
+    </body>
+</html>

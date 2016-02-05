@@ -33,8 +33,6 @@ define(function (require) {
 
     CompoChat.prototype._init = function () {
 
-
-
         this.chatContent = new TextArea();
         this.chatContent.setBounds(0,0,245,135);
         this.addChild(this.chatContent);

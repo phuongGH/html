@@ -1,0 +1,42 @@
+===========================================================================================================
+Add Atlas File
+
+- Resource chung bỏ vào folder /Scripts/GameHTML5/lib/resources/default/atlas/ (chỉ file .tps, .json, .png), những file hình riêng lẻ của resouce bỏ vào /Scripts/GameHTML5/lib/resources/default/atlas/images
+- Resouce của game bỏ vào folder /Scripts/GameHTML5/lib/resources/default/atlas/gamename
+===========================================================================================================
+
+===========================================================================================================
+Add Config Load Resouce
+
+- Resource chung:
+    + Vào /Scripts/GameHTML5/src/configs/PreLoaderConfig.js
+    + Thêm tên file .json của atlas vào ResourceGeneral
+- Resoucre game:
+    + Vào /Scripts/GameHTML5/src/configs/GameNameConfig.js
+    + Thêm tên file .json của atlas vào ResourceGameApp
+
+===========================================================================================================
+
+===========================================================================================================
+Generate Resource Register (ResourceGeneral.js, ResourceTLMN.js, ...)
+
+- Mở Terminal window
+- cd đến folder tools hoặc kéo thả folder tools vào Terminal window /Scripts/GameHTML5/tools
+- Chạy script: cscript gen.vbs [-option]
+    + Không có -option thì sẽ chạy mặc định chỉ generate file /Scripts/GameHTML5/src/utils/resourceregister/ResourceGeneral.js
+    + -game "[ten_game1|ten_game2]" (Ex: -game "tlmn|samloc") thì sẽ generate file /Scripts/GameHTML5/src/utils/resourceregister/Resource[tên game].js
+    + -all thì sẽ generate cả ResourceGeneral.js và tất cả ResourceGameName.js
+
+Thay đổi thiết lập từ file config cho generate resource:
+- Config được lưu tại ResourceGenerateConfig/ConfigVars.txt, các biến trong ConfigVars.txt bao gồm:
++ ResourcePath: Đường dẫn đến thư mục chứa resource (các spritesheet của game)
++ GeneratePath: Đường dẫn đến thư mục chứa file source code sau khi tạo
++ GenerateFile: Tên file sau khi tạo (chỉ áp dụng cho ResourceGeneral.js)
++ TemplateGeneral: Tên file chứa template của ResourceGeneral.js (nằm chung với thư mục config)
++ TemplateGame: Tên file chứa template của source sau khi tạo của game (nằm chung với thư mục config)
++ IsBackup: có backup hay không file ResourceGeneral.js (giá trị 0 hoặc 1)
++ BackupPath: Đường dẫn chứa file backup
++ MapFileName: Sửa lại tên game trong source code sau khi generate. Mặc định tên game không có
+trong biến này thì viết hoa toàn bộ tên game
+Ex: samloc|SamLoc|tlmn|TLMN => tên game là samloc thì sửa lại là SamLoc, tên game là tlmn thì sửa lại là TLMN
+===========================================================================================================
